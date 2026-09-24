@@ -19,8 +19,7 @@ Dos tareas conectadas sobre contratación pública en Perú:
   indicador de riesgo de adjudicaciones a un solo licitador — explícitamente
   encuadrado como señal de alerta, no como prueba, según OCP y Ojo Público).
 
-Video de presentación (≤12 min, ambas tareas): _pendiente — se agrega el
-enlace aquí una vez grabado_.
+Video de presentación (≤12 min, ambas tareas):https://drive.google.com/drive/folders/1-8PKZhkBgMnbyzyDIEwLqVcJIzy-01BX?usp=sharing
 
 ## Estructura del repositorio
 
