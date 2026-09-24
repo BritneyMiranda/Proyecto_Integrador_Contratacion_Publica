@@ -1,0 +1,27 @@
+id,pregunta,ambito,estilo,afecta_norma_modificatoria,doc_id_esperado,paginas_esperadas,cercania,nota
+1,¿Cuál es el objeto de la Ley General de Contrataciones Públicas?,dominio,legal,no,ley_32069,1,,
+2,¿Dónde se definen los términos que usa la ley?,dominio,legal,no,ley_32069,2,,
+3,¿Qué contrataciones quedan excluidas del ámbito de aplicación de la ley?,dominio,legal,no,ley_32069,6,,
+4,¿Quiénes están impedidos de contratar con el Estado?,dominio,legal,no,ley_32069,17,,
+5,¿Qué son los contratos menores?,dominio,legal,no,ley_32069,19,,
+6,¿Qué es la Plataforma Digital para las Contrataciones Públicas (Pladicop)?,dominio,legal,no,ley_32069,21,,
+7,¿Qué garantías se exigen en los contratos de contratación pública?,dominio,legal,no,ley_32069,28;29,,
+8,¿Cuál es el límite máximo de los adelantos directos al contratista?,dominio,legal,no,ley_32069,32,,
+9,¿Cuándo procede la resolución del contrato?,dominio,legal,no,ley_32069,32;33,,
+10,¿Cómo se calcula la multa como sanción administrativa?,dominio,legal,no,ley_32069,44,,
+11,¿Cuál es la diferencia entre inhabilitación temporal y definitiva?,dominio,legal,no,ley_32069,45,,
+12,¿Qué modifica el Decreto Supremo N.° 001-2026-EF?,dominio,legal,si,ds_001_2026_ef,1,,
+13,¿Qué requisitos de calificación se exigen a los postores?,dominio,legal,si,ds_001_2026_ef,4,,
+14,¿Qué es el cuaderno de incidencias en la supervisión de obras?,dominio,legal,si,ds_001_2026_ef,8,,
+15,¿Se necesita una adenda para aprobar una prestación adicional de obra bajo el sistema solo construcción?,dominio,legal,si,ds_001_2026_ef,9,,
+16,¿Qué regula el convenio arbitral en las contrataciones públicas?,dominio,legal,si,ds_001_2026_ef,11,,
+17,"Si gano una obra del Estado, ¿me dan plata por adelantado para poder comprar materiales?",dominio,coloquial,si,ds_001_2026_ef,7,,
+18,"¿Qué pasa si nadie se presenta a un concurso del Estado, se cancela nomás?",dominio,coloquial,no,ley_32069,27,,
+19,¿Necesito estar inscrito en algún registro para poder venderle al Estado?,dominio,coloquial,no,ley_32069,17,,
+20,"Si me quedo con un contrato pero después no puedo cumplir, ¿puedo pasárselo a otra empresa?",dominio,coloquial,no,ley_32069,31,,
+21,¿Puedo negociar el precio de mi oferta con la entidad antes de firmar el contrato?,dominio,coloquial,si,ds_001_2026_ef,4,,
+22,¿Qué requisitos tiene una Adjudicación Simplificada?,fuera_de_dominio,,,,,cercana,término 'adjudicación simplificada' no aparece en el corpus; solo el Reglamento completo lo detalla
+23,¿Cómo se calcula el valor referencial en una contratación de bienes?,fuera_de_dominio,,,,,cercana,término 'valor referencial' no aparece en el corpus indexado
+24,¿Cómo cocino un ceviche peruano?,fuera_de_dominio,,,,,lejana,completamente ajena al dominio
+25,¿Quién ganó la última Copa Mundial de fútbol?,fuera_de_dominio,,,,,lejana,completamente ajena al dominio
+26,¿Cuál es la capital de Francia?,fuera_de_dominio,,,,,lejana,completamente ajena al dominio

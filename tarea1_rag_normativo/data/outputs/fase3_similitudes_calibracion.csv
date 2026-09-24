@@ -1,0 +1,29 @@
+pregunta,deberia_abstenerse,mejor_similitud,motivo
+¿Cuál es el objeto de la Ley General de Contrataciones Públicas?,False,0.8915,
+¿Dónde se definen los términos que usa la ley?,False,0.841,
+¿Qué contrataciones quedan excluidas del ámbito de aplicación de la ley?,False,0.8929,
+¿Quiénes están impedidos de contratar con el Estado?,False,0.8706,
+¿Qué son los contratos menores?,False,0.8955,
+¿Qué es la Plataforma Digital para las Contrataciones Públicas (Pladicop)?,False,0.9076,
+¿Qué garantías se exigen en los contratos de contratación pública?,False,0.8692,
+¿Cuál es el límite máximo de los adelantos directos al contratista?,False,0.883,
+¿Cuándo procede la resolución del contrato?,False,0.8712,
+¿Cómo se calcula la multa como sanción administrativa?,False,0.8726,
+¿Cuál es la diferencia entre inhabilitación temporal y definitiva?,False,0.884,
+¿Qué modifica el Decreto Supremo N.° 001-2026-EF?,False,0.875,
+¿Qué requisitos de calificación se exigen a los postores?,False,0.8781,
+¿Cómo se entrega el adelanto directo en contratos de obra?,False,0.9062,
+¿Qué es el cuaderno de incidencias en la supervisión de obras?,False,0.8957,
+¿Se necesita una adenda para aprobar una prestación adicional de obra bajo el sistema solo construcción?,False,0.9235,
+¿Qué regula el convenio arbitral en las contrataciones públicas?,False,0.8619,
+¿Cuándo entra en vigencia el decreto supremo?,False,0.8745,
+¿Cómo cocino un ceviche peruano?,True,0.7974,completamente ajena al dominio
+¿Quién ganó la última Copa Mundial de fútbol?,True,0.7693,completamente ajena al dominio
+¿Cuál es la capital de Francia?,True,0.7624,completamente ajena al dominio
+¿Cómo se calcula el valor referencial en una contratación de bienes?,True,0.8672,término 'valor referencial' no aparece en el corpus indexado
+¿Qué requisitos tiene una Adjudicación Simplificada?,True,0.8456,término 'adjudicación simplificada' no aparece en el corpus indexado
+¿Qué dice el Reglamento sobre las bases estandarizadas?,True,0.8575,término 'bases estandarizadas' no aparece en el corpus indexado
+¿Cuál es el plazo de subsanación de observaciones a las bases?,True,0.8707,términos 'plazo de subsanación' y 'observaciones a las bases' no aparecen en el corpus
+¿Cómo funciona el comité de recepción de una obra?,True,0.85,término 'comité de recepción' no aparece en el corpus indexado
+¿Cómo se calcula la penalidad por mora en un contrato de bienes?,True,0.876,"término 'penalidad por mora' no aparece en el corpus indexado (sí existe 'multa' como sanción administrativa, que es otra cosa)"
+¿Cómo se aplica el reajuste de precios en un contrato de ejecución periódica?,True,0.8668,término 'reajuste de precios' no aparece en el corpus indexado

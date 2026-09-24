@@ -1,0 +1,2 @@
+n_records_por_mes,filas_antes_de_deduplicar,filas_despues_de_deduplicar,ocid_duplicados_entre_meses,releases_por_record_min,releases_por_record_mediana,releases_por_record_max,n_departamentos_distintos,n_sin_departamento
+"{'2026-06': 7304, '2026-07': 6567, '2026-08': 6553}",20424,20424,0,1,13.0,74,25,0

@@ -1,0 +1,4 @@
+timestamp_utc,operacion,url,intentos,duracion_s,tamano_bytes,exito,detalle_error
+2026-09-21T17:25:17.341176+00:00,descargar_mes,https://contratacionesabiertas.oece.gob.pe/api/v1/file/seace_v3/json/2026/06/,1,15.95,11170315,True,
+2026-09-21T17:28:02.100231+00:00,descargar_mes,https://contratacionesabiertas.oece.gob.pe/api/v1/file/seace_v3/json/2026/07/,1,163.73,10032696,True,
+2026-09-21T17:28:21.770806+00:00,descargar_mes,https://contratacionesabiertas.oece.gob.pe/api/v1/file/seace_v3/json/2026/08/,1,18.66,8315209,True,

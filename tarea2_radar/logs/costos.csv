@@ -1,0 +1,15 @@
+timestamp_utc,modelo,franja_horaria,tokens_entrada_cache_hit,tokens_entrada_cache_miss,tokens_salida,latencia_ms,costo_usd,exito,detalle_error,fuente_precios,fecha_verificacion_precios
+2026-09-21T18:17:54.952125+00:00,gemini-3.6-flash,no_aplica,0,0,0,0.0,0.0,False,ver excepción,,
+2026-09-21T18:19:44.825892+00:00,gemini-3.6-flash,no_aplica,0,1220,447,36562.0,0.0,True,,https://ai.google.dev/gemini-api/docs/pricing,2026-09-20
+2026-09-21T20:14:37.831239+00:00,gemini-3.6-flash,no_aplica,0,0,0,0.0,0.0,False,ver excepción,,
+2026-09-21T20:15:14.991355+00:00,gemini-3.6-flash,no_aplica,0,0,0,14656.0,0.0,False,ver excepción,,
+2026-09-21T20:15:52.636426+00:00,gemini-3.6-flash,no_aplica,0,0,0,12188.0,0.0,False,ver excepción,,
+2026-09-21T20:16:23.389955+00:00,gemini-3.6-flash,no_aplica,0,1092,563,25672.0,0.0,True,,https://ai.google.dev/gemini-api/docs/pricing,2026-09-20
+2026-09-22T17:14:10.425383+00:00,gemini-3.6-flash,no_aplica,0,0,0,6532.0,0.0,False,ver excepción,,
+2026-09-22T17:14:27.564214+00:00,gemini-3.6-flash,no_aplica,0,0,0,12000.0,0.0,False,ver excepción,,
+2026-09-22T17:15:01.699247+00:00,gemini-3.6-flash,no_aplica,0,0,0,29015.0,0.0,False,ver excepción,,
+2026-09-22T17:17:42.660207+00:00,gemini-3.6-flash,no_aplica,0,0,0,50907.0,0.0,False,ver excepción,,
+2026-09-22T17:18:43.632194+00:00,gemini-3.6-flash,no_aplica,0,0,0,52859.0,0.0,False,ver excepción,,
+2026-09-22T17:19:05.533355+00:00,gemini-3.6-flash,no_aplica,0,1092,597,13797.0,0.0,True,,https://ai.google.dev/gemini-api/docs/pricing,2026-09-20
+2026-09-22T22:24:16.414687+00:00,gemini-3.6-flash,no_aplica,0,1064,398,14000.0,0.0,True,,https://ai.google.dev/gemini-api/docs/pricing,2026-09-20
+2026-09-24T02:07:58.549938+00:00,gemini-3.6-flash,no_aplica,0,875,86,5453.0,0.0,True,,https://ai.google.dev/gemini-api/docs/pricing,2026-09-20

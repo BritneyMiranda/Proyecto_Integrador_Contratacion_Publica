@@ -1,0 +1,2 @@
+n_preguntas,recall_at_1,recall_at_3,recall_at_5,abstenciones,latencia_ms_promedio,preguntas_con_filtro
+12,0.583,0.667,0.75,2,621.2,11

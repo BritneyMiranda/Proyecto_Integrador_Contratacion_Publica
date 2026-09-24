@@ -1,0 +1,13 @@
+id,pregunta,ocid_esperado,filtros_aplicados,mejor_similitud,abstuvo,latencia_ms,acierto_top1,acierto_top3,acierto_top5
+1,¿Qué proceso hay en Cusco para el alquiler de un cargador frontal en una obra de mejoramiento de carretera?,ocds-dgv273-seacev3-1238145,"{'$and': [{'departamento': {'$eq': 'CUSCO'}}, {'categoria': {'$eq': 'works'}}]}",0.8478,True,6844.0,False,False,False
+2,¿Se compró algún videoendoscopio descartable para el Hospital Sergio Bernales?,ocds-dgv273-seacev3-1244288,,0.8834,False,16.0,True,True,True
+3,Servicio de vales de consumo con tarjetas electrónicas para el Despacho Presidencial,ocds-dgv273-seacev3-2026-10137-4,{'categoria': {'$eq': 'services'}},0.9181,False,172.0,True,True,True
+4,Compra de piedra chancada para transitabilidad vial en Puno,ocds-dgv273-seacev3-1232393,{'departamento': {'$eq': 'PUNO'}},0.907,False,47.0,True,True,True
+5,Adquisición de enseres de ferretería para asistencia humanitaria por riesgo de desastres en Arequipa,ocds-dgv273-seacev3-1232420,{'departamento': {'$eq': 'AREQUIPA'}},0.8955,False,46.0,True,True,True
+6,Obras de mantenimiento vial en Arequipa por encima de un millón de soles,ocds-dgv273-seacev3-1243557,"{'$and': [{'departamento': {'$eq': 'AREQUIPA'}}, {'categoria': {'$eq': 'works'}}, {'monto': {'$gt': 1000000.0}}]}",0.8545,True,79.0,False,False,False
+7,Consultoría para elaborar el expediente técnico de un centro de salud en Junín,ocds-dgv273-seacev3-1236210,{'departamento': {'$eq': 'JUNÍN'}},0.8919,False,31.0,True,True,True
+8,Obras en Junín para mejorar un local comunal,ocds-dgv273-seacev3-1235524,"{'$and': [{'departamento': {'$eq': 'JUNÍN'}}, {'categoria': {'$eq': 'works'}}]}",0.8717,False,47.0,True,True,True
+9,Compra de leche evaporada para un programa de alimentación en Piura,ocds-dgv273-seacev3-1243887,{'departamento': {'$eq': 'PIURA'}},0.8721,False,47.0,True,True,True
+10,Obras de movilidad urbana en Piura por encima de 5 millones de soles,ocds-dgv273-seacev3-1249500,"{'$and': [{'departamento': {'$eq': 'PIURA'}}, {'categoria': {'$eq': 'works'}}, {'monto': {'$gt': 5000000.0}}]}",0.8636,False,46.0,False,True,True
+11,Obra de renovación de pistas en Loreto,ocds-dgv273-seacev3-1234447,"{'$and': [{'departamento': {'$eq': 'LORETO'}}, {'categoria': {'$eq': 'works'}}]}",0.8786,False,47.0,False,False,True
+12,Mantenimiento del área de movimiento del Aeropuerto Internacional en Callao,ocds-dgv273-seacev3-1228550,{'departamento': {'$eq': 'CALLAO'}},0.866,False,32.0,False,False,False

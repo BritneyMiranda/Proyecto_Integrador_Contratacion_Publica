@@ -1,0 +1,2 @@
+n_preguntas,bm25_recall_at_1,bm25_recall_at_3,bm25_recall_at_5,semantica_recall_at_1,semantica_recall_at_3,semantica_recall_at_5
+5,0.2,0.6,0.6,0.2,0.4,0.6

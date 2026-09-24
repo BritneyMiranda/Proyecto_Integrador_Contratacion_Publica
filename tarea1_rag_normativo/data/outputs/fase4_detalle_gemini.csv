@@ -1,0 +1,27 @@
+id,pregunta,ambito,es_dominio,mejor_similitud,abstuvo,latencia_ms,acierto_top1,acierto_top3,acierto_top5
+1,¿Cuál es el objeto de la Ley General de Contrataciones Públicas?,dominio,True,0.8319,True,1218.0,True,True,True
+2,¿Dónde se definen los términos que usa la ley?,dominio,True,0.6606,True,407.0,True,True,True
+3,¿Qué contrataciones quedan excluidas del ámbito de aplicación de la ley?,dominio,True,0.8089,True,1562.0,False,True,True
+4,¿Quiénes están impedidos de contratar con el Estado?,dominio,True,0.7457,True,391.0,False,False,False
+5,¿Qué son los contratos menores?,dominio,True,0.7311,True,718.0,True,True,True
+6,¿Qué es la Plataforma Digital para las Contrataciones Públicas (Pladicop)?,dominio,True,0.829,True,375.0,True,True,True
+7,¿Qué garantías se exigen en los contratos de contratación pública?,dominio,True,0.7556,True,922.0,True,True,True
+8,¿Cuál es el límite máximo de los adelantos directos al contratista?,dominio,True,0.7415,True,375.0,True,True,True
+9,¿Cuándo procede la resolución del contrato?,dominio,True,0.7124,True,1000.0,False,True,True
+10,¿Cómo se calcula la multa como sanción administrativa?,dominio,True,0.6999,True,391.0,False,False,False
+11,¿Cuál es la diferencia entre inhabilitación temporal y definitiva?,dominio,True,0.7214,True,906.0,False,True,True
+12,¿Qué modifica el Decreto Supremo N.° 001-2026-EF?,dominio,True,0.8152,True,1875.0,True,True,True
+13,¿Qué requisitos de calificación se exigen a los postores?,dominio,True,0.7413,True,453.0,True,True,True
+14,¿Qué es el cuaderno de incidencias en la supervisión de obras?,dominio,True,0.7504,True,735.0,True,True,True
+15,¿Se necesita una adenda para aprobar una prestación adicional de obra bajo el sistema solo construcción?,dominio,True,0.8138,True,531.0,True,True,True
+16,¿Qué regula el convenio arbitral en las contrataciones públicas?,dominio,True,0.7602,True,797.0,False,False,True
+17,"Si gano una obra del Estado, ¿me dan plata por adelantado para poder comprar materiales?",dominio,True,0.7168,True,578.0,False,True,True
+18,"¿Qué pasa si nadie se presenta a un concurso del Estado, se cancela nomás?",dominio,True,0.6841,True,844.0,True,True,True
+19,¿Necesito estar inscrito en algún registro para poder venderle al Estado?,dominio,True,0.7546,True,406.0,True,True,True
+20,"Si me quedo con un contrato pero después no puedo cumplir, ¿puedo pasárselo a otra empresa?",dominio,True,0.716,True,937.0,True,True,True
+21,¿Puedo negociar el precio de mi oferta con la entidad antes de firmar el contrato?,dominio,True,0.6905,True,500.0,True,True,True
+22,¿Qué requisitos tiene una Adjudicación Simplificada?,fuera_de_dominio,False,0.7212,True,797.0,,,
+23,¿Cómo se calcula el valor referencial en una contratación de bienes?,fuera_de_dominio,False,0.7077,True,516.0,,,
+24,¿Cómo cocino un ceviche peruano?,fuera_de_dominio,False,0.5421,True,937.0,,,
+25,¿Quién ganó la última Copa Mundial de fútbol?,fuera_de_dominio,False,0.4905,True,407.0,,,
+26,¿Cuál es la capital de Francia?,fuera_de_dominio,False,0.492,True,812.0,,,

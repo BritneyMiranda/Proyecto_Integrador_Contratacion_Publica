@@ -1,0 +1,6 @@
+id,pregunta,bm25_mejor_score,bm25_acierto_top1,bm25_acierto_top3,bm25_acierto_top5,semantica_mejor_similitud,semantica_acierto_top1,semantica_acierto_top3,semantica_acierto_top5
+17,"Si gano una obra del Estado, ¿me dan plata por adelantado para poder comprar materiales?",11.821,True,True,True,0.8605,False,False,True
+18,"¿Qué pasa si nadie se presenta a un concurso del Estado, se cancela nomás?",19.396,False,True,True,0.8393,False,True,True
+19,¿Necesito estar inscrito en algún registro para poder venderle al Estado?,14.11,False,True,True,0.8826,True,True,True
+20,"Si me quedo con un contrato pero después no puedo cumplir, ¿puedo pasárselo a otra empresa?",12.047,False,False,False,0.8526,False,False,False
+21,¿Puedo negociar el precio de mi oferta con la entidad antes de firmar el contrato?,21.903,False,False,False,0.8515,False,False,False

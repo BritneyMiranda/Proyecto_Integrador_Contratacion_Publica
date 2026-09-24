@@ -1,0 +1,127 @@
+# Configuración completa de la Tarea 1 (motor RAG normativo). TODO vive
+# aquí: rutas, modelo, umbral, mensajes, prompts y el registro de
+# documentos fuente — nada de esto está hardcodeado en el código.
+
+rutas:
+  data_processed: data/processed
+  indice_vectorial: data/index/chroma_storage
+
+embeddings:
+  # "local" (E5, gratis, CPU) u "openai" (text-embedding-3-small, ver Fase 4
+  # y data/outputs/fase4_comparacion_embeddings.csv). Cambiar de modelo es
+  # cambiar este bloque — ver src/ingest/embeddings.py::crear_embedder.
+  proveedor: local
+  modelo: intfloat/multilingual-e5-small
+  modelo_openai: text-embedding-3-small
+
+chunking:
+  # Ganadora de la Fase 2 (recall@5 = 0.944 sobre eval/eval_fase2.yaml).
+  chunk_size: 128
+  chunk_overlap: 24
+
+recuperacion:
+  k: 5
+  # Similitud coseno mínima del MEJOR fragmento recuperado para no
+  # abstenerse. Calibrado con un barrido real sobre eval/eval_abstencion.yaml
+  # (18 preguntas dentro del corpus + 10 fuera) — ver
+  # data/outputs/fase3_barrido_umbral.csv.
+  #
+  # Criterio de selección: el umbral MÁS BAJO que logra 0 "falsos_respuesta"
+  # (0 casos donde el motor contestaría con confianza algo fuera del
+  # corpus), aceptando el costo de más abstenciones innecesarias sobre
+  # preguntas que sí tenían respuesta. En este dominio (asesoría legal a
+  # PYMEs sobre contratación pública), una respuesta segura pero
+  # incorrecta puede costarle dinero real al usuario; una abstención de
+  # más solo le cuesta reformular la pregunta o consultar al Reglamento.
+  umbral_similitud: 0.88
+
+generacion:
+  # Proveedor activo: "gemini" (capa gratuita, $0 real) o "deepseek" (casi
+  # gratis, ~centavos, pero con precio real según la hora — ver
+  # src/engine/pricing.py). Cambiar de proveedor es solo cambiar este bloque.
+  proveedor: gemini
+  modelo: gemini-3.6-flash   # si proveedor=deepseek, cambiar a "deepseek-flash"
+  nivel: gratuito   # "gratuito" -> costo_usd siempre 0.0; "pagado" -> se cobra con la tabla de precios
+  temperatura: 0.0
+  # gemini-3.6-flash parece contar tokens de "pensamiento" interno dentro
+  # de este límite, así que se deja holgado para que la respuesta final no
+  # se corte a media frase (visto en pruebas reales con 700).
+  max_tokens_salida: 2000
+
+  # Bloque de DeepSeek, dejado configurado por si se cambia `proveedor` arriba.
+  api_base: "https://api.deepseek.com"
+
+mensajes:
+  abstencion_fuera_de_indice: >-
+    No tengo esa información en los documentos indexados (Ley N.° 32069,
+    Ley General de Contrataciones Públicas, y Decreto Supremo N.° 001-2026-EF).
+    Es posible que la respuesta esté en el Reglamento completo u otra norma
+    que no forma parte de este índice — te recomiendo consultarla
+    directamente o con un especialista.
+
+  system_prompt: >-
+    Eres un asistente que responde preguntas sobre contratación pública
+    peruana EXCLUSIVAMENTE con base en los fragmentos de contexto que se
+    te entregan. Reglas estrictas, sin excepciones:
+
+    1. Nunca respondas con información que no esté en el contexto
+    entregado, aunque la conozcas de otra fuente. Si el contexto no
+    alcanza para responder con seguridad, dilo explícitamente en vez de
+    completar con conocimiento general.
+
+    2. Cada afirmación debe citar el documento y la página exacta de
+    donde sale, usando el formato "(Documento: <título>, página <N>)".
+
+    3. Los fragmentos pueden venir de dos instrumentos legales distintos:
+    la Ley N.° 32069 y el Decreto Supremo N.° 001-2026-EF (que modifica el
+    REGLAMENTO de esa ley, un documento distinto de la propia ley). Cada
+    uno numera sus artículos de forma independiente desde el 1, así que
+    "Artículo 42" de la ley y "Artículo 42" del decreto son disposiciones
+    completamente distintas sobre temas distintos. NUNCA combines ni
+    confundas contenido de un "Artículo N" citado en un documento con el
+    "Artículo N" del otro documento, aunque compartan número. Si el
+    contexto trae fragmentos de ambos documentos, trátalos como fuentes
+    separadas y dilo explícitamente.
+
+    4. Si un fragmento viene del Decreto Supremo N.° 001-2026-EF, es el
+    texto de un artículo del Reglamento TAL COMO QUEDÓ despues de esta
+    modificación (versión vigente desde el 8 de enero de 2026); no
+    tenemos indexado el texto anterior a la modificación para comparar,
+    así que no afirmes qué decía "antes" a menos que el propio fragmento
+    lo diga.
+
+    5. Responde en español, de forma clara y directa.
+
+# ─────────────────────────────────────────────────────────────────────────
+# Registro de fuentes del corpus normativo (Fase 1). Cada documento se
+# descarga UNA vez a mano (los sitios oficiales bloquean descargas
+# automáticas) y se coloca en data/raw/<doc_id>.pdf con ese nombre exacto.
+# ─────────────────────────────────────────────────────────────────────────
+documentos:
+  - doc_id: ley_32069
+    titulo: "Ley N.° 32069, Ley General de Contrataciones Públicas"
+    institucion: "OSCE / Congreso de la República"
+    tipo: ley
+    fuente_url: "https://www.gob.pe/institucion/osce/colecciones/45029-ley-n-32069-ley-general-de-contrataciones-publicas"
+    ruta_pdf: "data/raw/ley_32069.pdf"
+    fecha_descarga: "2026-09-20"
+    # Fecha de promulgación, leída directamente del cierre del propio PDF:
+    # "Dado en la Casa de Gobierno, en Lima, a los veintiún días del mes
+    # de junio del año dos mil veinticuatro." (página 63).
+    version: "2024-06-21"
+
+  - doc_id: ds_001_2026_ef
+    titulo: "Decreto Supremo N.° 001-2026-EF, que modifica el Reglamento de la Ley N.° 32069"
+    institucion: "Ministerio de Economía y Finanzas / El Peruano"
+    tipo: decreto_supremo
+    fuente_url: "https://busquedas.elperuano.pe/dispositivo/NL/2474920-3"
+    ruta_pdf: "data/raw/ds_001_2026_ef.pdf"
+    fecha_descarga: "2026-09-20"
+    # Fecha de publicación en El Peruano, leída del encabezado repetido en
+    # cada página del propio PDF: "Jueves 8 de enero de 2026".
+    version: "2026-01-08"
+
+# Documento opcional (recomendado por el enunciado): agregar aquí una
+# norma adicional que modifique la ley o el reglamento, una vez elegida
+# y verificada (ver Fase 1 del enunciado).
+opcionales: []

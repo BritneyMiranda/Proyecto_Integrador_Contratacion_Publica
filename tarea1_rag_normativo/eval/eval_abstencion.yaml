@@ -1,0 +1,40 @@
+# Conjunto de calibración del umbral de abstención (Fase 3).
+#
+# `dentro_del_corpus` reutiliza las 18 preguntas de eval_fase2.yaml — sí
+# tienen respuesta en nuestros 2 documentos, así que el motor NO debe
+# abstenerse (deberia_abstenerse: false).
+#
+# `fuera_del_corpus` son preguntas donde el motor SÍ debe abstenerse
+# (deberia_abstenerse: true). Dos categorías, verificadas por búsqueda
+# exacta de texto en data/processed/*.jsonl antes de escribirlas aquí
+# (no se adivinó qué está o no indexado):
+#   - completamente ajenas al dominio (canario clásico: "ceviche"),
+#   - del dominio de contratación pública pero con términos que NO
+#     aparecen en ninguno de los 2 documentos indexados (típicamente
+#     porque viven en el Reglamento completo, que no forma parte del
+#     corpus, o en artículos del Reglamento que este Decreto Supremo no
+#     modificó).
+
+dentro_del_corpus: eval_fase2.yaml  # se cargan desde ahí, ver src/engine/calibracion.py
+
+fuera_del_corpus:
+  - pregunta: "¿Cómo cocino un ceviche peruano?"
+    motivo: "completamente ajena al dominio"
+  - pregunta: "¿Quién ganó la última Copa Mundial de fútbol?"
+    motivo: "completamente ajena al dominio"
+  - pregunta: "¿Cuál es la capital de Francia?"
+    motivo: "completamente ajena al dominio"
+  - pregunta: "¿Cómo se calcula el valor referencial en una contratación de bienes?"
+    motivo: "término 'valor referencial' no aparece en el corpus indexado"
+  - pregunta: "¿Qué requisitos tiene una Adjudicación Simplificada?"
+    motivo: "término 'adjudicación simplificada' no aparece en el corpus indexado"
+  - pregunta: "¿Qué dice el Reglamento sobre las bases estandarizadas?"
+    motivo: "término 'bases estandarizadas' no aparece en el corpus indexado"
+  - pregunta: "¿Cuál es el plazo de subsanación de observaciones a las bases?"
+    motivo: "términos 'plazo de subsanación' y 'observaciones a las bases' no aparecen en el corpus"
+  - pregunta: "¿Cómo funciona el comité de recepción de una obra?"
+    motivo: "término 'comité de recepción' no aparece en el corpus indexado"
+  - pregunta: "¿Cómo se calcula la penalidad por mora en un contrato de bienes?"
+    motivo: "término 'penalidad por mora' no aparece en el corpus indexado (sí existe 'multa' como sanción administrativa, que es otra cosa)"
+  - pregunta: "¿Cómo se aplica el reajuste de precios en un contrato de ejecución periódica?"
+    motivo: "término 'reajuste de precios' no aparece en el corpus indexado"

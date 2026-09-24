@@ -1,0 +1,23 @@
+# Conjunto de calibración del umbral de abstención para el corpus de la
+# Tarea 2 (contratación pública, 3 meses de 2026). Mismo propósito que
+# tarea1_rag_normativo/eval/eval_abstencion.yaml, pero para ESTE corpus —
+# el umbral de la Tarea 1 se calibró sobre texto legal, no hay garantía de
+# que sirva aquí (ver Fase 3 del README para la comparación real).
+
+fuera_del_corpus:
+  - pregunta: "¿Cómo cocino un ceviche peruano?"
+    motivo: "completamente ajena al dominio"
+  - pregunta: "¿Quién ganó la última Copa Mundial de fútbol?"
+    motivo: "completamente ajena al dominio"
+  - pregunta: "¿Cuál es la capital de Francia?"
+    motivo: "completamente ajena al dominio"
+  - pregunta: "Construcción de una base permanente en la Luna"
+    motivo: "del dominio de 'obras' pero imposible/inexistente en este corpus"
+  - pregunta: "Procesos de contratación pública del año 1998"
+    motivo: "fuera del rango temporal del corpus (jun-ago 2026)"
+  - pregunta: "Compra de vacunas contra el COVID-19 durante la pandemia de 2020"
+    motivo: "del dominio pero fuera del rango temporal del corpus"
+  - pregunta: "Servicios de traducción simultánea al mandarín para una cumbre diplomática"
+    motivo: "plausible en el dominio pero no verificado como presente en el corpus"
+  - pregunta: "Adquisición de satélites de observación espacial"
+    motivo: "del dominio 'bienes' pero fuera de la escala típica de este corpus"

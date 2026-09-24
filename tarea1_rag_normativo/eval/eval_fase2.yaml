@@ -1,0 +1,69 @@
+# Conjunto de evaluación para elegir chunk_size/chunk_overlap (Fase 2).
+#
+# Cada pregunta se redactó a partir de un artículo real localizado en
+# data/processed/*.jsonl (ver el índice de artículos por página que se
+# construyó antes de escribir estas preguntas). `paginas_esperadas` es la
+# página donde empieza el artículo citado; se acepta como acierto que el
+# fragmento recuperado caiga en esa página o en la siguiente (algunos
+# artículos continúan a la página siguiente y la extracción por página es
+# exacta, no por artículo).
+#
+# No es un conjunto exhaustivo — es evidencia suficiente para comparar
+# dos configuraciones de chunking de forma no arbitraria, como pide el
+# enunciado. Se puede ampliar en fases posteriores.
+
+preguntas:
+  - doc_id: ley_32069
+    pregunta: "¿Cuál es el objeto de la Ley General de Contrataciones Públicas?"
+    paginas_esperadas: [1]
+  - doc_id: ley_32069
+    pregunta: "¿Dónde se definen los términos que usa la ley?"
+    paginas_esperadas: [2]
+  - doc_id: ley_32069
+    pregunta: "¿Qué contrataciones quedan excluidas del ámbito de aplicación de la ley?"
+    paginas_esperadas: [6]
+  - doc_id: ley_32069
+    pregunta: "¿Quiénes están impedidos de contratar con el Estado?"
+    paginas_esperadas: [17]
+  - doc_id: ley_32069
+    pregunta: "¿Qué son los contratos menores?"
+    paginas_esperadas: [19]
+  - doc_id: ley_32069
+    pregunta: "¿Qué es la Plataforma Digital para las Contrataciones Públicas (Pladicop)?"
+    paginas_esperadas: [21]
+  - doc_id: ley_32069
+    pregunta: "¿Qué garantías se exigen en los contratos de contratación pública?"
+    paginas_esperadas: [28, 29]
+  - doc_id: ley_32069
+    pregunta: "¿Cuál es el límite máximo de los adelantos directos al contratista?"
+    paginas_esperadas: [32]
+  - doc_id: ley_32069
+    pregunta: "¿Cuándo procede la resolución del contrato?"
+    paginas_esperadas: [32, 33]
+  - doc_id: ley_32069
+    pregunta: "¿Cómo se calcula la multa como sanción administrativa?"
+    paginas_esperadas: [44]
+  - doc_id: ley_32069
+    pregunta: "¿Cuál es la diferencia entre inhabilitación temporal y definitiva?"
+    paginas_esperadas: [45]
+  - doc_id: ds_001_2026_ef
+    pregunta: "¿Qué modifica el Decreto Supremo N.° 001-2026-EF?"
+    paginas_esperadas: [1]
+  - doc_id: ds_001_2026_ef
+    pregunta: "¿Qué requisitos de calificación se exigen a los postores?"
+    paginas_esperadas: [4]
+  - doc_id: ds_001_2026_ef
+    pregunta: "¿Cómo se entrega el adelanto directo en contratos de obra?"
+    paginas_esperadas: [7]
+  - doc_id: ds_001_2026_ef
+    pregunta: "¿Qué es el cuaderno de incidencias en la supervisión de obras?"
+    paginas_esperadas: [8]
+  - doc_id: ds_001_2026_ef
+    pregunta: "¿Se necesita una adenda para aprobar una prestación adicional de obra bajo el sistema solo construcción?"
+    paginas_esperadas: [9]
+  - doc_id: ds_001_2026_ef
+    pregunta: "¿Qué regula el convenio arbitral en las contrataciones públicas?"
+    paginas_esperadas: [11]
+  - doc_id: ds_001_2026_ef
+    pregunta: "¿Cuándo entra en vigencia el decreto supremo?"
+    paginas_esperadas: [15]

@@ -1,0 +1,87 @@
+# Configuración completa de la Tarea 2 (radar de contratación pública).
+# Nada de esto vive en el código: rutas, modelo, umbral, categorías y
+# mensajes están aquí.
+
+rutas:
+  data_processed: data/processed/procesos_validados.parquet
+  indice_vectorial: data/index/chroma_storage
+
+embeddings:
+  # Mismo modelo local que la Tarea 1 — reusado literalmente
+  # (tarea1_rag_normativo/src/ingest/embeddings.py::E5Embedder).
+  proveedor: local
+  modelo: intfloat/multilingual-e5-small
+
+recuperacion:
+  k: 5
+  # Calibrado con evidencia real sobre ESTE corpus (contratación pública)
+  # — src/calibracion.py, data/outputs/fase3_barrido_umbral.csv. El umbral de
+  # la Tarea 1 (0.88, RAG normativo) NO transfiere: aplicado aquí produce
+  # 50% de falsos-negativos y todavía deja pasar un falso-positivo.
+  #
+  # Criterio DISTINTO al de la Tarea 1 a propósito (no la misma regla
+  # reaplicada sin pensar): en la Tarea 1, "0% falsos-positivos a
+  # cualquier costo" tenía sentido porque una respuesta legal mal citada
+  # es difícil de verificar para quien no es abogado. Acá cada respuesta
+  # SIEMPRE cita el ocid del proceso — el usuario puede verificarlo él
+  # mismo en segundos — y un radar de transparencia que se abstiene 83%
+  # de las veces (el umbral de "0 falsos-positivos" aquí sería 0.90) deja
+  # de cumplir su propósito. Por eso se eligió 0.86: minimiza el total de
+  # errores en el barrido (3, el mínimo de toda la tabla), con 0% de
+  # falsos-negativos sobre las 12 preguntas de dominio, a cambio de un
+  # residual de falsos-positivos mitigado por la cita verificable del ocid.
+  umbral_similitud: 0.86
+
+riesgo:
+  # Fase 5 — indicador "adjudicaciones a un solo licitador" (src/riesgo.py).
+  # Justificación del mínimo: con menos de 10 procesos adjudicados, un solo
+  # caso mueve la proporción en >=10 puntos porcentuales — ruido, no señal.
+  umbral_minimo_procesos_por_comprador: 10
+  top_n_compradores: 10
+
+filtros:
+  # Departamentos válidos = los 25 oficiales (ver validar.py de Fase 2).
+  # Categorías OCDS estándar presentes en el corpus.
+  categorias_validas: [works, services, goods]
+  alias_categoria:
+    obra: works
+    obras: works
+    servicio: services
+    servicios: services
+    bien: goods
+    bienes: goods
+    producto: goods
+    productos: goods
+
+generacion:
+  proveedor: gemini
+  modelo: gemini-3.6-flash
+  nivel: gratuito
+  temperatura: 0.0
+  max_tokens_salida: 2000
+  api_base: "https://api.deepseek.com"  # solo si proveedor=deepseek
+
+mensajes:
+  abstencion_fuera_de_indice: >-
+    No encontré procesos de contratación relevantes en el corpus indexado
+    (3 meses de 2026: junio, julio y agosto, fuente SEACE v3) para responder
+    esta pregunta. Puede ser un período, departamento o categoría fuera de
+    este corpus, o simplemente no haber procesos similares.
+
+  system_prompt: >-
+    Eres un asistente que responde preguntas sobre procesos de contratación
+    pública peruana EXCLUSIVAMENTE con base en los procesos de contexto que
+    se te entregan (ya filtrados por departamento/monto/categoría si la
+    pregunta los mencionaba, y recuperados por similitud semántica del
+    resto de la pregunta). Reglas estrictas:
+
+    1. Nunca inventes procesos ni montos que no estén en el contexto.
+
+    2. Cada proceso que menciones debe citarse por su identificador OCID,
+    usando el formato "(ocid: <valor>)".
+
+    3. Si el contexto no tiene suficientes procesos para responder con
+    seguridad, dilo explícitamente.
+
+    4. Responde en español, de forma clara y directa, mencionando montos
+    en soles (PEN) cuando estén disponibles.

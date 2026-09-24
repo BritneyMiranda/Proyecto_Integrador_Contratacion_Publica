@@ -1,0 +1,13 @@
+id,pregunta,ocid_esperado,departamento_esperado,categoria_esperada
+1,¿Qué proceso hay en Cusco para el alquiler de un cargador frontal en una obra de mejoramiento de carretera?,ocds-dgv273-seacev3-1238145,CUSCO,services
+2,¿Se compró algún videoendoscopio descartable para el Hospital Sergio Bernales?,ocds-dgv273-seacev3-1244288,LIMA,goods
+3,Servicio de vales de consumo con tarjetas electrónicas para el Despacho Presidencial,ocds-dgv273-seacev3-2026-10137-4,LIMA,services
+4,Compra de piedra chancada para transitabilidad vial en Puno,ocds-dgv273-seacev3-1232393,PUNO,goods
+5,Adquisición de enseres de ferretería para asistencia humanitaria por riesgo de desastres en Arequipa,ocds-dgv273-seacev3-1232420,AREQUIPA,goods
+6,Obras de mantenimiento vial en Arequipa por encima de un millón de soles,ocds-dgv273-seacev3-1243557,AREQUIPA,services
+7,Consultoría para elaborar el expediente técnico de un centro de salud en Junín,ocds-dgv273-seacev3-1236210,JUNÍN,services
+8,Obras en Junín para mejorar un local comunal,ocds-dgv273-seacev3-1235524,JUNÍN,works
+9,Compra de leche evaporada para un programa de alimentación en Piura,ocds-dgv273-seacev3-1243887,PIURA,goods
+10,Obras de movilidad urbana en Piura por encima de 5 millones de soles,ocds-dgv273-seacev3-1249500,PIURA,works
+11,Obra de renovación de pistas en Loreto,ocds-dgv273-seacev3-1234447,LORETO,works
+12,Mantenimiento del área de movimiento del Aeropuerto Internacional en Callao,ocds-dgv273-seacev3-1228550,CALLAO,services

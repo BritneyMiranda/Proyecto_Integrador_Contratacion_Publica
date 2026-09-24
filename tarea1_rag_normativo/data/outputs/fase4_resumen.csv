@@ -1,0 +1,2 @@
+n_preguntas_dominio,n_preguntas_fuera_dominio,recall_at_1,recall_at_3,recall_at_5,abstenciones_correctas,abstenciones_incorrectas,tasa_abstencion_correcta_pct,tasa_abstencion_incorrecta_pct,latencia_ms_promedio_consulta
+21,5,0.571,0.762,0.905,5,12,100.0,57.1,638.8
